@@ -61,6 +61,7 @@ gulp.task("usemin", function() {
         .pipe(gulp.dest("dist/"));
 });
 ```
+![usemin.png](https://github.com/weixisheng/gulp-example/blob/master/img/usemin.png)
 ```
 <!-- concat-replace合并代码 -->
     <!-- build:js -->
@@ -81,3 +82,4 @@ gulp.task("usemin", function() {
         .pipe(gulp.dest('build/'));
 });   
 ```
+![concat.png](https://github.com/weixisheng/gulp-example/blob/master/img/concat.png)
