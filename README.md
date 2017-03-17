@@ -63,6 +63,7 @@ gulp.task("usemin", function() {
 ```
 ![usemin.png](https://github.com/weixisheng/gulp-example/blob/master/img/usemin.png)
 ```
+//第二种
 <!-- concat-replace合并代码 -->
     <!-- build:js -->
     <script src="js/foo.js"></script>
@@ -82,7 +83,7 @@ gulp.task("usemin", function() {
         .pipe(gulp.dest('build/'));
 });   
 ```
-![concat.png](https://github.com/weixisheng/gulp-example/blob/master/img/concat.png)
+![concat.png](https://github.com/weixisheng/gulp-example/blob/master/img/concat.png)  
 6. browser-sync 同步刷新
 ```
 gulp.task("server", function() {
