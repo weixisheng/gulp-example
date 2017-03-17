@@ -44,10 +44,9 @@ gulp.task("usemin", function() {
 gulp.task("concat", function() {
     gulp.src("index.html")
         .pipe($.concatReplace({
-            prefix: "concat",
+            prefix: "bundle",
             base: "../",
             output: {
-                css: "./build/css",
                 js: "./build/js"
             }
         }))

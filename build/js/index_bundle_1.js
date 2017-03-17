@@ -4,4 +4,4 @@ console.warn("foo function")
 
 ;console.log('bar');
 
-console.info("bar function");
+console.warn("bar function");
