@@ -83,3 +83,18 @@ gulp.task("usemin", function() {
 });   
 ```
 ![concat.png](https://github.com/weixisheng/gulp-example/blob/master/img/concat.png)
+6. browser-sync 同步刷新
+```
+gulp.task("server", function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+   // gulp.watch("scss/*.scss", ['sass']);
+   // gulp.watch("*.es6.js", ["babel"]);
+    gulp.watch("*").on('change', browserSync.reload);
+});
+
+gulp.task("default", ["server"]);
+```
