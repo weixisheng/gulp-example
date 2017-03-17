@@ -1,0 +1,10 @@
+@import "mixin.scss";
+$bg: #e4bb91;
+$color: #fff;
+$fz: 16px;
+div {
+    background: $bg;
+    color: $color;
+    font-size: $fz;
+    @include center;
+}

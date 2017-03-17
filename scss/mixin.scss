@@ -1,0 +1,20 @@
+$fz:16px;
+$fz:14px!default;
+$linkColor:#4433ef;
+body {
+    background: #eee;
+    font-size: $fz;
+}
+
+a {
+    color: $linkColor;
+    &:hover {
+        color: darken($linkColor, 50%);
+        font-weight: bold;
+        font-size: 18px;
+    }
+}
+
+@mixin center {
+    text-align: center;
+}

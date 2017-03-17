@@ -1,0 +1,34 @@
+{
+    "name": "gulpexample",
+    "version": "1.0.0",
+    "description": "gulp例子",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/weixisheng/gulp-example.git"
+    },
+    "author": "weixisheng",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-preset-es2015": "^6.24.0",
+        "browser-sync": "^2.18.8",
+        "del": "^2.2.2",
+        "gulp": "^3.9.1",
+        "gulp-babel": "^6.1.2",
+        "gulp-clean": "^0.3.2",
+        "gulp-concat-replace": "^1.0.5",
+        "gulp-jshint": "^2.0.4",
+        "gulp-load-plugins": "^1.5.0",
+        "gulp-minify-css": "^1.2.4",
+        "gulp-obfuscate": "^0.2.9",
+        "gulp-regex-rename": "^0.1.0",
+        "gulp-rev": "^7.1.2",
+        "gulp-sass": "^3.1.0",
+        "gulp-uglify": "^2.1.0",
+        "gulp-usemin": "^0.3.28",
+        "jshint": "^2.9.4"
+    }
+}
