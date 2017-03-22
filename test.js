@@ -1,1 +1,11 @@
-"use strict";function ಠ_ಠ205(ಠ_ಠ206){return new Promise(function(ಠ_ಠ207,ಠ_ಠ208){setTimeout(ಠ_ಠ207,ಠ_ಠ206,"done")})}ಠ_ಠ205(1e3).then(function(ಠ_ಠ206){console.log("%c"+ಠ_ಠ206,"background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f00),color-stop(0.15, #FF7D00), color-stop(0.3, #ff0), color-stop(0.45, #0f0), color-stop(0.6, #00f),color-stop(0.75, #0ff), color-stop(0.9, #f0f), color-stop(1, #000) );color:transparent;-webkit-background-clip: text;font-size:20px;")});
+'use strict';
+
+function timeout(ms) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(resolve, ms, 'done');
+    });
+}
+
+timeout(1000).then(function (value) {
+    console.log("%c" + value, 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f00),' + 'color-stop(0.15, #FF7D00), color-stop(0.3, #ff0), color-stop(0.45, #0f0), color-stop(0.6, #00f),' + 'color-stop(0.75, #0ff), color-stop(0.9, #f0f), color-stop(1, #000) );color:transparent;' + '-webkit-background-clip: text;font-size:20px;');
+});

@@ -16,6 +16,14 @@ gulp.task("babel", function() {
         .pipe($.regexRename(/\.es6/, ''))
         .pipe(gulp.dest('./'));
 });
+gulp.task("babel2", function() {
+    gulp.src('./*.es6.js')
+        .pipe($.babel({
+            presets: ['es2015']
+        }))
+        .pipe($.regexRename(/\.es6/, ''))
+        .pipe(gulp.dest('./'));
+});
 gulp.task("jsHint", function() {
     gulp.src("js/*.js")
         .pipe(jshint())
