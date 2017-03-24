@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>canvas</title>
+</head>
+
+<body>
+    <canvas id="drawing"></canvas>
+    <script>
+    var drawing = document.getElementById("drawing");
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d');
+        console.log(context);
+        context.beginPath();
+        context.arc(100, 100, 50, 0, 2 * Math.PI, false);
+        context.stroke();
+    }
+    </script>
+</body>
+
+</html>
