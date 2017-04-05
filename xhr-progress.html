@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>xhr progress</title>
+</head>
+<body>
+<div class="status"></div>
+<input type="text" value="" placeholder="some text..." size="25" >
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function (event) {
+        if((xhr.status>=200 && xhr.status<304)||xhr.status===304){
+            console.log(xhr.responseText)
+        }
+        else{
+            console.log("xhr fail:"+xhr.status);
+        }
+    };
+    xhr.onprogress = function (event) {
+        var d= document.querySelector('.status');
+        if(event.lengthComputable){
+            d.innerHTML = "received "+event.position+" of "+event.total+" bytes ";
+        }
+    };
+    xhr.open("get","package.json",true);
+    xhr.send(null);
+
+    var i = document.getElementsByTagName('input')[0];
+    i.addEventListener("paste",function (e) {
+        console.log(e.clipboardData.getData("text"))
+    },false);
+</script>
+</body>
+</html>

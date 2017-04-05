@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loading</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        @keyframes load{
+            0%   {transform: translateY(0);}
+            50%  {transform: translateY(-50px);}
+            100% {transform: translateY(0);}
+        }
+        @-webkit-keyframes load {
+            0%   {transform: translateY(0);}
+            50%  {transform: translateY(-50px);}
+            100% {transform: translateY(0);}
+        }
+        .loading-container{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width:200px;
+            height: 200px;
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        .loading-image{
+            position: relative;
+            background: url("img/icon_loading.png") no-repeat 0 0;
+            background-size: 50px auto;
+            width: 50px;
+            height: 50px;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-animation:load 0.6s infinite ease-in-out;
+            animation:load 0.6s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<div class="loading-container">
+    <div class="loading-image"></div>
+</div>
+<script>
+    var a = document.querySelector('.loading-image');
+    var p=0;
+    var timer = setInterval(()=> {
+        p++;
+        a.style.backgroundPositionY=-(p%7)*50+"px";
+    },600);
+</script>
+</body>
+</html>
