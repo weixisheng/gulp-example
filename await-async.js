@@ -1,1 +1,49 @@
-"use strict";function ಠ_ಠ256(ಠ_ಠ258){return function(){var ಠ_ಠ247=ಠ_ಠ258.apply(this,ಠ_ಠ263);return new ಠ_ಠ253(function(ಠ_ಠ258,ಠ_ಠ264){function ಠ_ಠ257(ಠ_ಠ265,ಠ_ಠ266){try{var ಠ_ಠ248=ಠ_ಠ247[ಠ_ಠ265](ಠ_ಠ266),ಠ_ಠ249=ಠ_ಠ248.value}catch(ಠ_ಠ258){return void ಠ_ಠ264(ಠ_ಠ258)}if(!ಠ_ಠ248.ಠ_ಠ268)return ಠ_ಠ253.resolve(ಠ_ಠ249).then(function(ಠ_ಠ258){ಠ_ಠ257("ಠ_ಠ260",ಠ_ಠ258)},function(ಠ_ಠ258){ಠ_ಠ257("throw",ಠ_ಠ258)});ಠ_ಠ258(ಠ_ಠ249)}return ಠ_ಠ257("ಠ_ಠ260")})}}var ಠ_ಠ250=function(ಠ_ಠ258){return new ಠ_ಠ253(function(ಠ_ಠ247){ಠ_ಠ254(ಠ_ಠ247,ಠ_ಠ258)})};ಠ_ಠ256(regeneratorRuntime.mark(function ಠ_ಠ258(){var ಠ_ಠ247;return regeneratorRuntime.wrap(function(ಠ_ಠ258){for(;;)switch(ಠ_ಠ258.ಠ_ಠ259=ಠ_ಠ258.ಠ_ಠ260){case 0:ಠ_ಠ247=0;case 1:if(!(ಠ_ಠ247<5)){ಠ_ಠ258.ಠ_ಠ260=8;break}return ಠ_ಠ258.ಠ_ಠ260=4,ಠ_ಠ250(1e3);case 4:console.log((new Date).toLocaleString(),ಠ_ಠ247);case 5:ಠ_ಠ247++,ಠ_ಠ258.ಠ_ಠ260=1;break;case 8:return ಠ_ಠ258.ಠ_ಠ260=10,ಠ_ಠ250(1e3);case 10:console.log((new Date).toLocaleString(),ಠ_ಠ247);case 11:case"end":return ಠ_ಠ258.stop()}},ಠ_ಠ258,void 0)}))();
+"use strict";
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+var sleep = function sleep(s) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, s);
+    });
+};
+
+_asyncToGenerator(regeneratorRuntime.mark(function _callee() {
+    var i;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+            switch (_context.prev = _context.next) {
+                case 0:
+                    i = 0;
+
+                case 1:
+                    if (!(i < 5)) {
+                        _context.next = 8;
+                        break;
+                    }
+
+                    _context.next = 4;
+                    return sleep(1000);
+
+                case 4:
+                    console.log(new Date().toLocaleString(), i);
+
+                case 5:
+                    i++;
+                    _context.next = 1;
+                    break;
+
+                case 8:
+                    _context.next = 10;
+                    return sleep(1000);
+
+                case 10:
+                    console.log(new Date().toLocaleString(), i);
+
+                case 11:
+                case "end":
+                    return _context.stop();
+            }
+        }
+    }, _callee, undefined);
+}))();
