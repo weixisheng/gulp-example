@@ -4,7 +4,7 @@ let gulp = require("gulp"),
     $ = require("gulp-load-plugins")(),
     del = require("del"),
     jshint = require("gulp-jshint");
-
+	spritesmith = require('gulp.spritesmith')
 //es6->es5,压缩，混淆，重命名
 gulp.task("babel", function() {
     gulp.src('./*.es6.js')
@@ -64,7 +64,30 @@ gulp.task("concat", function() {
 gulp.task("clean", function(cb) {
     del(["dist/*", "build/*"], cb);
 });
-
+//雪碧图
+gulp.task('sprite',function(){
+	gulp.src('img/ico/*.png')
+	.pipe(spritesmith({
+		imgName:'sprite.png',
+		cssName:'css/sprite.css',
+		padding:0,
+		algorithm:'top-down',
+		cssTemplate:function (data) {
+                var arr=[];
+                data.sprites.forEach(function (sprite) {
+                    arr.push(".icon-"+sprite.name+
+                    "{" +
+                    "background-image: url('"+sprite.escaped_image+"');"+
+                    "background-position: "+sprite.px.offset_x+"px "+sprite.px.offset_y+"px;"+
+                    "width:"+sprite.px.width+";"+
+                    "height:"+sprite.px.height+";"+
+                    "}\n");
+                });
+                return arr.join("");
+            }
+	}))
+	.pipe(gulp.dest('img/'));
+});
 //监听服务
 gulp.task("server", function() {
     browserSync.init({
